@@ -14,10 +14,10 @@ namespace tests
         {
             // Use default pact directory ..\..\pacts and default log
             // directory ..\..\logs
-            var pact = Pact.V3("Consuner 1", "Service A", new PactConfig());
+            var pact = Pact.V3("Consumer1", "ServiceA", new PactConfig());
 
             // or specify custom log and pact directories
-            pact = Pact.V3("Consuner 1", "Service A", new PactConfig
+            pact = Pact.V3("Consumer1", "ServiceA", new PactConfig
             {
                 PactDir = $"{Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName}{Path.DirectorySeparatorChar}pacts"
             });
