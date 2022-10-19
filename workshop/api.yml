@@ -1,0 +1,20 @@
+-  request:
+      url: /users/1
+      method: GET
+   response:
+    - status: 200
+      file: 1.json
+
+-  request:
+      url: /users/2
+      method: GET
+   response:
+    - status: 500
+
+-  request:
+      url: /users/3
+      method: GET
+   response:
+    - status: 200
+      latency: 5000
+      file: 1.json
