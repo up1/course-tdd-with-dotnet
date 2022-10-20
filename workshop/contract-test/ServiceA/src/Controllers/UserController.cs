@@ -19,8 +19,14 @@ public class UserController : ControllerBase
     {
         var user = new User();
         user.Id = id;
-        user.Name = "Somkiat";
-        user.Age = 30;
+        user.Name = "Mock name";
+        user.Age = 99;
+
+        if(id == 2)
+        {
+            return NotFound();
+        }
+
         return Ok(user);
     }
 }
