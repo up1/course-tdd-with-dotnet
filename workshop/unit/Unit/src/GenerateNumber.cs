@@ -11,7 +11,7 @@ namespace src
         }
 
         public string getResult()
-        {  
+        {
             int number = _random.Next(10);
             return "No" + number;
         }
