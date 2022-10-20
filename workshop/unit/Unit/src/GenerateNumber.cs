@@ -3,10 +3,16 @@ namespace src
 {
     public class GenerateNumber
     {
-        public string getResult()
+        private Random _random;
+
+        public GenerateNumber(Random _random)
         {
-            Random random = new Random();
-            int number = random.Next(10);
+            this._random = _random;
+        }
+
+        public string getResult()
+        {  
+            int number = _random.Next(10);
             return "No" + number;
         }
 

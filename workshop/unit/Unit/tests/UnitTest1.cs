@@ -8,7 +8,9 @@ public class UnitTest1
     public void TestWithRandom5()
     {
         // Arrange
-        GenerateNumber g = new GenerateNumber();
+        var random = new StubRandom();
+
+        GenerateNumber g = new GenerateNumber(random); // Constructor Injection
         // Act
         string actualResult = g.getResult();
         // Assert
@@ -16,4 +18,12 @@ public class UnitTest1
     }
 
 
+}
+
+class StubRandom : Random
+{
+    public override int Next(int maxValue)
+    {
+        return 5;
+    }
 }
