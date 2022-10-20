@@ -6,14 +6,18 @@ using src;
 
 namespace tests
 {
-    public class UserControllerTests
+    public class UserControllerTests : IDisposable
     {
+        TestApplication application;
+        public UserControllerTests()
+        {
+            application = new TestApplication();
+        }
 
         [Fact]
         public async Task Get_User_By_Id()
         {
             // Arrange
-            var application = new TestApplication();
             var client = application.CreateClient();
             // Act
             var response = await client.GetAsync("/api/user/1");
@@ -28,6 +32,11 @@ namespace tests
             Assert.Equal(1, user!.Id);
             Assert.Equal("Somkiat", user.Name);
             Assert.Equal(30, user.Age);
+        }
+
+        public void Dispose()
+        {
+            application.Dispose();
         }
     }
 }

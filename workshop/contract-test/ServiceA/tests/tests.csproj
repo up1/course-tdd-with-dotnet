@@ -20,10 +20,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.10" />
+    <PackageReference Include="PactNet" Version="4.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Mvc.Testing" />
+    <None Remove="PactNet" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\src.csproj" />
